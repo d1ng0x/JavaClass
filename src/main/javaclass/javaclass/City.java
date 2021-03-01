@@ -40,7 +40,7 @@ public class City {
                 return database.get(i).getValue();
             }
         }
-        return new Address("", 0,0);
+        return new Address("", 0, 0);
     }
 
 
@@ -58,6 +58,11 @@ public class City {
         }
         return result;
     }
+
+    public List<Pair<Person, Address>> getDatabase() {
+        return database;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -65,12 +70,22 @@ public class City {
         City city = (City) o;
         return Objects.equals(database, city.database);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(database);
     }
+
     @Override
     public String toString() {
-        return database.toString();
+        StringBuilder SB = new StringBuilder();
+        for (int i = 0; i < database.size(); i++) {
+            SB.append(database.get(i).getKey());
+            SB.append(" ");
+            SB.append(database.get(i).getValue());
+        }
+        return SB.toString();
     }
 }
+
+

@@ -1,7 +1,7 @@
-package javaclass;
-
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 class PersonTest {
     @Test
@@ -31,7 +31,7 @@ class PersonTest {
        assertEquals(a, b);
        Person example1 = new Person("Храпунов", "Алексей");
        Person example2 = new Person("Сергеев", "Алексей");
-           assertNotEquals(example2, example1);
+       assertNotEquals(example2, example1);
     }
     @Test
     void testHashCode() {

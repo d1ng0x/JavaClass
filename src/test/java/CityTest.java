@@ -1,10 +1,9 @@
-package javaclass;
-
 import javafx.util.Pair;
 import org.junit.jupiter.api.Test;
 import java.util.*;
-import static org.junit.jupiter.api.Assertions.*;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 class CityTest {
     List<Pair<Person, Address>> database;
@@ -39,6 +38,24 @@ class CityTest {
         city.addPair(person2, address2);
         city.changeAddress(person1,new Address("Типанова",10,63));
         assertEquals("ул.Типанова д.10 кв.63", city.getAddress(person1).toString());
+    }
+    @Test
+    void getDatabase(){
+        city.addPair(person1, address1);
+        city.addPair(person2, address2);
+        assertEquals("Ivanov Ivan ул.Lenina д.10 кв.4;Petrov Petr ул.Koroleva д.2 кв.37;", city.toString());
+    }
+    @Test
+    void getOnStreet(){
+        city.addPair(person1, address1);
+        city.addPair(person2, address2);
+        assertEquals("[Ivanov Ivan]", city.personsOnStreet("Lenina").toString());
+    }
+    @Test
+    void getInHome(){
+        city.addPair(person1, address1);
+        city.addPair(person2, address2);
+        assertEquals("[Ivanov Ivan]", city.personsInHome("Lenina",10).toString());
     }
     @Test
     void testEquals(){

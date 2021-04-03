@@ -1,5 +1,3 @@
-package javaclass;
-
 import java.util.Objects;
 
 public class Person {
@@ -7,6 +5,7 @@ public class Person {
     private String surname, name;
 
     public Person(String surname, String name) {
+        if (name == null || surname == null) throw new IllegalArgumentException("Name can not be null");
         this.surname = surname;
         this.name = name;
     }
@@ -16,6 +15,7 @@ public class Person {
     }
 
     public void setSurname(String surname) {
+        if (surname == null) throw new IllegalArgumentException("Wrong data");
         this.surname = surname;
     }
 
@@ -24,6 +24,7 @@ public class Person {
     }
 
     public void setName(String name) {
+        if (name == null) throw new IllegalArgumentException("Wrong data");
         this.name = name;
     }
 

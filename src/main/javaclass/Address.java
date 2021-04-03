@@ -1,5 +1,3 @@
-package javaclass;
-
 import java.util.Objects;
 
 public class Address {
@@ -8,6 +6,7 @@ public class Address {
     private int home, flat;
 
     public Address(String street, int home, int flat) {
+        if (street == null || home < 1  || flat < 1) throw new IllegalArgumentException("Wrong data");
         this.street = street;
         this.home = home;
         this.flat = flat;
@@ -18,6 +17,7 @@ public class Address {
     }
 
     public void setStreet(String street) {
+        if (street == null) throw new IllegalArgumentException("Wrong data");
         this.street = street;
     }
 
@@ -26,6 +26,7 @@ public class Address {
     }
 
     public void setHome(int home) {
+        if (home < 1) throw new IllegalArgumentException("Wrong data");
         this.home = home;
     }
 
@@ -34,6 +35,7 @@ public class Address {
     }
 
     public void setFlat(int flat) {
+        if (flat < 1) throw new IllegalArgumentException("Wrong data");
         this.flat = flat;
     }
 

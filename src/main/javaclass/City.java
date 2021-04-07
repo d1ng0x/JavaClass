@@ -6,7 +6,6 @@ public class City {
     private final List<Pair<Person, Address>> database = new ArrayList<>();
 
     public City(List<Pair<Person, Address>> list) {
-        database.clear();
         if (list != null) {
             database.addAll(list);
         }

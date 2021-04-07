@@ -78,7 +78,7 @@ class CityTest {
     @Test
     void testToString(){
         city.addPair(person1, address1);
-        assertEquals("Ivanov Ivan ул.Lenina д.10 кв.4",city.toString());
+        assertEquals("Ivanov Ivan ул.Lenina д.10 кв.4;",city.toString());
     }
 }
 
